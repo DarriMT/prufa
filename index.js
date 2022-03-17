@@ -186,6 +186,9 @@ app.listen(port, () => {
     console.log('Tune app listening on port + ' + port);
 });
 
+app.use('*', (req, res) => {
+    res.status(405).send('Operation not supported.');
+});
 //note, timing, duration attributes [id:auto]
 //request fails if genere_id does not exist, array != null
 //if request is successful, return a new resource (  all attributes, [id] , array)
